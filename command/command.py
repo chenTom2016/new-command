@@ -12,9 +12,15 @@ from PIL import ImageGrab, ImageTk, ImageDraw, Image
 import qrcode
 import json
 from datetime import datetime
+from time import strftime, time
+import ctypes
+import sys
+import shutil
 
 
 init(autoreset=True)
+
+DEFAULT_REPO_ROOT = "https://github.com/chenTom2016/TomLangModules/blob/main/"
 
 DATE_FOLDER = "Date"
 CONFIG_PATH = os.path.join(DATE_FOLDER, "color_config.ini")
@@ -64,6 +70,151 @@ def date():
     now = datetime.now()
     formatted = now.strftime("%Y-%m-%d %H:%M:%S")
     print(formatted)
+
+
+def install_module(name_or_url):
+    if name_or_url.startswith("http") or "/" in name_or_url:
+        url = name_or_url
+    else:
+        url = f"{DEFAULT_REPO_ROOT}{name_or_url}.git"
+
+    repo_name = url.split('/')[-1].replace('.git', '')
+    install_dir = os.path.join(".tomlang_modules", repo_name)
+
+    if os.path.exists(install_dir):
+        print(f"Requirement already satisfied: {repo_name} in {install_dir}")
+        return install_dir
+
+    print(f"Collecting {repo_name}")
+    start = time()
+    try:
+        subprocess.run(["git", "clone", url, install_dir], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
+        elapsed = time() - start
+        size = get_directory_size(install_dir) / 1024
+        speed = size / elapsed if elapsed > 0 else size
+        print(f"Downloaded {repo_name}-{elapsed:.2f}s [{size:.1f} kB @ {speed:.1f} kB/s]")
+        print(f"Installing collected package: {repo_name}")
+        print(f"Successfully installed {repo_name}")
+        return install_dir
+    except Exception as e:
+        print(f"ERROR: Could not install {repo_name}: {e}")
+        return None
+
+def get_directory_size(path):
+    total = 0
+    for dirpath, dirnames, filenames in os.walk(path):
+        for f in filenames:
+            fp = os.path.join(dirpath, f)
+            if os.path.exists(fp):
+                total += os.path.getsize(fp)
+    return total
+
+
+
+class TomLangInterpreter:
+    def __init__(self):
+        self.env = {}
+
+    def eval_expr(self, expr):
+        expr = expr.strip()
+        if expr.startswith('"') and expr.endswith('"'):
+            return expr[1:-1]
+        if expr in self.env:
+            return self.env[expr]
+        try:
+            if '.' in expr:
+                return float(expr)
+            return int(expr)
+        except:
+            pass
+        for var, val in self.env.items():
+            expr = re.sub(rf"\b{var}\b", repr(val), expr)
+        try:
+            return eval(expr)
+        except Exception as e:
+            raise SyntaxError(f"Expression evaluation failed: {expr}")
+
+    def run_line(self, line):
+        line = line.replace("：", ":").strip()
+        if not line:
+            return
+        if re.match(r"\w+\s*=\s*input\(\)", line):
+            var = line.split('=')[0].strip()
+            self.env[var] = input()
+            return
+        if re.match(r"\w+\s*=\s*.+", line):
+            var, expr = line.split('=', 1)
+            self.env[var.strip()] = self.eval_expr(expr)
+            return
+        if re.match(r"print\((.+)\)", line):
+            content = re.findall(r"print\((.+)\)", line)[0]
+            print(self.eval_expr(content))
+            return
+        raise SyntaxError(f"Invalid statement: {line}")
+
+    def extract_block(self, lines, start_index):
+        block = []
+        depth = 0
+        skip = 0
+        for j, raw in enumerate(lines[start_index:], start=start_index):
+            skip += 1
+            line = raw.strip()
+            if "{" in line:
+                depth += 1
+                if depth == 1:
+                    continue
+            if "}" in line:
+                depth -= 1
+                if depth == 0:
+                    break
+            if depth >= 1:
+                block.append(line)
+        return block, skip
+
+    def run_block(self, lines):
+        i = 0
+        while i < len(lines):
+            line = lines[i].strip().rstrip(";")
+            if not line or line.startswith("#"):
+                i += 1
+                continue
+            if line.startswith("if "):
+                cond = line[3:].rstrip(":").strip()
+                block, skip = self.extract_block(lines, i)
+                if self.eval_expr(cond):
+                    self.run_block(block)
+                i += skip
+                continue
+            if line.startswith("else"):
+                block, skip = self.extract_block(lines, i)
+                self.run_block(block)
+                i += skip
+                continue
+            self.run_line(line)
+            i += 1
+
+    def repl(self):
+        print("TomLang v0.4 Interactive Mode | type 'exit' to quit")
+        buffer = []
+        in_block = False
+        while True:
+            line = input(">>> ")
+            if line.strip().lower() == "exit":
+                break
+            if "{" in line:
+                in_block = True
+                buffer.append(line)
+                continue
+            if in_block:
+                buffer.append(line)
+                if "}" in line:
+                    self.run_block(buffer)
+                    buffer = []
+                    in_block = False
+                continue
+            self.run_block([line])
+
+
 
 class ScreenshotTool:
     
@@ -711,6 +862,13 @@ def main():
             EnhancedCalculator(root)
             root.mainloop()
 
+        elif user_input.lower().startswith("install"):
+            parts = user_input.split()
+            if len(parts) == 2:
+                install_module(parts[1])
+            else:
+                print("Usage: install <module-name>")
+
         elif user_input == 'screenshot':
             root = tk.Tk()
             ScreenshotTool(root)
@@ -719,10 +877,15 @@ def main():
         elif user_input == 'date':
             date()
 
+        elif user_input.lower() == "tomlang":
+            TomLangInterpreter().repl()
+        
+
         elif user_input == 'qrcode':
             root = tk.Tk()
             AdvancedQRGenerator(root)
             root.mainloop()
+
 
         else:
             print(f"Error: Unknown command {user_input}，Enter 'help' to see the supported commands")

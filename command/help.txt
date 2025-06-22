@@ -1,5 +1,3 @@
-
-
 calculator		Call Calculator		
 dir			Scan Directory	
 date			Display time
