@@ -1,14 +1,28 @@
 # Command Line v3.0 Preview
 
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)  
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)  
-[![GitHub stars](https://img.shields.io/github/stars/chenTom2016/TomLangModules.svg?style=social)](https://github.com/chenTom2016/TomLangModules)
+<p align="center">
+  <img src="assets/logo.png" width="120" alt="Command Line Logo">
+</p>
+
+<p align="center">
+  <b>A multifunctional Python-based Command Line Tool</b><br>
+  <i>一个多功能的 Python 命令行工具</i>
+</p>
+
+<p align="center">
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.8+-blue.svg"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
+  <a href="https://github.com/chenTom2016/TomLangModules/stargazers"><img src="https://img.shields.io/github/stars/chenTom2016/TomLangModules.svg?style=social"></a>
+</p>
 
 ---
 
-## 🔥 项目简介
-**Command Line v3.0** 是一个基于 **Python** 开发的跨平台命令行工具，集成了丰富的功能模块，包括：
+## 🌍 Language / 语言
+<details open>
+<summary>🇨🇳 简体中文</summary>
 
+## 🔥 项目简介
+**Command Line v3.0** 是一个基于 **Python** 的跨平台命令行工具，集成了丰富的功能模块，包括：
 - 🖥 命令行交互
 - 📦 模块安装器（类似 `pip`）
 - 🎨 自定义彩色输出
@@ -23,8 +37,10 @@
 
 ---
 
-## ✨ 功能展示
+## 🚀 快速开始
 
-### 📦 模块管理器
-```bash
-install <module-name>
+### 环境要求
+- Python 3.8+
+- 依赖库：
+  ```bash
+  pip install tkinter pillow qrcode cryptography googletrans==4.0.0-rc1 colorama requests
