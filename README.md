@@ -1,7 +1,7 @@
 # Command Line v3.0 Preview
 
 <p align="center">
-  <img src="New Command Logo/New Command Logo.png" width="120" alt="Command Line Logo"><br>
+  <img src="New Command Logo.png" width="120" alt="New Command Line Logo"><br>
   <b>A multifunctional Python-based Command Line Tool</b><br>
   <i>一个多功能的 Python 命令行工具</i>
 </p>
