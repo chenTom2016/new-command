@@ -33,8 +33,8 @@
 </p>
 
 - 🖥 **CLI Shell**
-  - Built-in commands: `help`, `dir`, `date`, `ip`, `exit`
-  - System commands: `python`, `node`, `cmd`, `powershell`, `notepad`, `explorer`  
+  - Built-in commands: help, dir, date, ip, exit
+  - System commands: python, node, cmd, powershell, notepad, explorer  
 
 - 📦 **Module Installer**  
   - Similar to `pip`, supports `install <module-name>` or git URL installation  
