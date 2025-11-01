@@ -103,7 +103,7 @@ python "command Line.py"
 ---
 
 ## 🌍 English Version  
-👉 [Click here for English README](README_EN.md)  
+👉 [Click here for English README](README.md)  
 
 ---
 
