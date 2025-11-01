@@ -103,7 +103,7 @@ python "command Line.py"
 ---
 
 ## 🌍 中文版  
-👉 [点击这里查看中文版](README.md)  
+👉 [点击这里查看中文版](README_CN.md)  
 
 ---
 
