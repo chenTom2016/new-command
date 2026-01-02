@@ -76,7 +76,7 @@
 
 ### Run  
 ```bash
-python "command Line.py"
+python "OpenNCL.py"
 ```
 
 ---
