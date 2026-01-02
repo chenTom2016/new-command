@@ -1,7 +1,5 @@
 # Command Line v3.0 Preview  
 
-<p align="center">
-  <img src="assets/logo.png" width="120" alt="Command Line Logo"><br>
   <b>A multifunctional Python-based Command Line Tool</b><br>
   <i>A powerful Python CLI utility with multiple features</i>
 </p>
@@ -19,7 +17,6 @@
 ## 📑 Navigation
 - [✨ Features](#-features)  
 - [🚀 Quick Start](#-quick-start)  
-- [📷 Screenshots](#-screenshots)  
 - [🛠 Author](#-author)  
 - [🌍 中文版](#-中文版)  
 - [📄 License](#-license)  
@@ -28,9 +25,6 @@
 
 ## ✨ Features  
 
-<p align="center">
-  <img src="assets/banner.png" width="90%" alt="Command Line Banner">
-</p>
 
 - 🖥 **CLI Shell**
   - Built-in commands: help, dir, date, ip, exit
@@ -84,15 +78,6 @@
 ```bash
 python "command Line.py"
 ```
-
----
-
-## 📷 Screenshots  
-
-<p align="center">
-  <img src="assets/calc.png" width="45%" alt="Calculator Screenshot">
-  <img src="assets/qr.png" width="45%" alt="QR Tool Screenshot">
-</p>
 
 ---
 
