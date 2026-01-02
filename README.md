@@ -1,4 +1,4 @@
-# Command Line v3.0 Preview  
+# OpenNCL v3.0
 
   <b>A multifunctional Python-based Command Line Tool</b><br>
   <i>A powerful Python CLI utility with multiple features</i>
