@@ -76,10 +76,11 @@
 
 ### Run  
 ```bash
-python "OpenNCL.py"
+python OpenNCL.py
 ```
-
----
+```bash
+OpenNCL.exe"
+```
 
 ## 🛠 Author  
 - Author: **Tom (chenTom2016)**  
