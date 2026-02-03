@@ -20,53 +20,93 @@
 - [📄 License](#-license)  
 ---
 ## ✨ Features  
+
+
 - 🖥 **CLI Shell**
   - Built-in commands: help, dir, date, ip, exit
   - System commands: python, node, cmd, powershell, notepad, explorer  
+
+
 - 📦 **Module Installer**  
   - Similar to `pip`, supports `install <module-name>` or git URL installation  
+
+
 - 🎨 **Colorful Output**  
   - Supports `color(fg, bg)` for custom colors  
+
+
 - 🖼 **Screenshot Tool**  
   - Fullscreen or area screenshot with preview  
+
+
 - 📱 **Advanced QR Code Tool**  
   - Custom colors, LOGO embedding, batch generation, history list  
+
+
 - 🧮 **Enhanced Calculator**  
   - Supports scientific functions, history, memory operations  
   - Includes the Windows classic Easter Egg `2016 ÷ 13` 🎉  
+
+
 - 🔒 **File Encryption & Decryption**  
   - Based on `cryptography.Fernet`, supports recursive encryption  
+
+
 - 🌐 **Translator**  
   - Based on Google Translate, usage: `translate <from> <to> <text>`  
+
+
 - 🔍 **Search & Open**  
   - Example: `{search:Google}: OpenAI`  
   - Or `{open:www.python.org}`  
+
+
 - ⚡ **Pro Mode**  
   - Enter with `mode pro`  
   - Supports `ping`, `open`, `encrypt`, `scan` commands  
+
+
 - 📝 **X++ Interpreter**  
   - Lightweight interpreter with variables, expressions, conditions, REPL  
 ---
 ## 🚀 Quick Start  
+
+
 ### Requirements  
+
 - Python 3.8+  
+
 - Install dependencies:  
   ```bash
   pip install tkinter pillow qrcode cryptography googletrans==4.0.0-rc1 colorama requests
   ```
+
+
 ### Run  
+
 ```bash
 python OpenNCL.py
 ```
+
 ```bash
 OpenNCL.exe"
 ```
+
+
 ## 🛠 Author  
+
 - Author: **Tom (chenTom2016)**  
+
 - GitHub: [chenTom2016](https://github.com/chenTom2016)  
 ---
+
+
 ## 🌍 中文版  
+
 👉 [点击这里查看中文版](README_CN.md)  
 ---
+
+
 ## 📄 License  
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.  
