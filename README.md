@@ -1,9 +1,10 @@
-# OpenNCL v3.0.5
-> This update is a patch update prior to OpenNCL V3.1.
+# OpenNCL
 
-<b>A multifunctional Python-based Command Line Tool</b><br>
-<i>A powerful Python CLI utility with multiple features</i>
+
+  <b>A multifunctional Python-based Command Line Tool</b><br>
+  <i>A powerful Python CLI utility with multiple features</i>
 </p>
+
 <p align="center">
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.8+-blue.svg"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
@@ -11,18 +12,31 @@
   <a href="https://github.com/chenTom2016/new-command/issues"><img src="https://img.shields.io/github/issues/chenTom2016/new-command.svg"></a>
   <a href="https://github.com/chenTom2016/new-command/network/members"><img src="https://img.shields.io/github/forks/chenTom2016/new-command.svg"></a>
 </p>
----
+
+
 ## 📑 Navigation
 
+This is a multi-functional command-line application (**OpenNCL v3.0**) that I developed using **_Python_** and **_Ruby._**
+    
+**OpenNCL**(_Open New Command Line OS_)
+    
+Author: **ChenTom2016**
+    
+Environment: **Windows + Python + Ruby**
+    
+Last Updated: February 5, 2026
+
+This project uses the **LGPL** and **MIT**license.
+
+>[!Note]
+>This app is available in Linux and Windows versions; please choose the appropriate version when downloading.
+
+
 - [✨ Features](#-features)  
-
 - [🚀 Quick Start](#-quick-start)  
-
+- [📷 Screenshots](#-screenshots)  
 - [🛠 Author](#-author)  
 
-- [🌍 中文版](#-中文版)  
-
-- [📄 License](#-license)  
 
 
 ---
@@ -76,45 +90,55 @@
 
 - 📝 **X++ Interpreter**  
   - Lightweight interpreter with variables, expressions, conditions, REPL  
+
 ---
+
 ## 🚀 Quick Start  
 
-
 ### Requirements  
-
 - Python 3.8+  
-
 - Install dependencies:  
   ```bash
   pip install tkinter pillow qrcode cryptography googletrans==4.0.0-rc1 colorama requests
   ```
 
-
 ### Run  
 
-```bash
-python OpenNCL.py
-```
+Windows:
+>
+> ```bash
+> python "OpenNCL.py"
+> ```
+>
+> ```bash
+> OpenNCL.exe
+> ```
+>
+> ```bash
+> OpenNCL.cmd
+> ```
 
-```bash
-OpenNCL.exe"
-```
+
+Linux:
+>
+> ```bash
+> python "OpenNCL.py"
+> ```
+
+
+---
 
 
 ## 🛠 Author  
-
 - Author: **Tom (chenTom2016)**  
+- GitHub: [chenTom2016](https://github.com/chenTom2016)
+- Contact Us:**OpenNCL@outlook.com**  
 
-- GitHub: [chenTom2016](https://github.com/chenTom2016)  
 ---
 
-
-## 🌍 中文版  
-
-👉 [点击这里查看中文版](README_CN.md)  
----
+This webpage was last updated on **February 5, 2026**.
 
 
-## 📄 License  
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.  
+
+
