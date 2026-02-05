@@ -27,7 +27,7 @@ Last Updated: February 5, 2026
 
 This project uses the **LGPL** and **MIT**license.
 
->[!Note]
+>[!TIP]
 >This app is available in Linux and Windows versions; please choose the appropriate version when downloading.
 
 
