@@ -1,0 +1,55 @@
+OpenNCL 3.0.5 — Help
+===========================
+
+Basic:
+  help                  Show this help
+  exit                  Exit OpenNCL
+  dir                   List directory
+  date                  Show current date
+
+
+Tools:
+  calculator            Enhanced calculator (GUI)
+  screenshot            Screenshot tool
+  linux                 Linux / WSL subsystem
+  mode pro              Professional mode
+
+
+System Shortcuts:
+  cmd | powershell | explorer | notepad
+  control | taskmgr | calc | mspaint
+
+
+Modules:
+  install <name>        Install module from repo
+
+
+Security:
+  encrypt <path>        Encrypt file/folder
+  decrypt <path>        Decrypt file/folder
+
+
+Script:
+  X++                   X++ interpreter
+
+
+Web:
+  {search:Google}:xxx
+  {search:Bing}:xxx
+  {search:YouTube}:xxx
+  {open:example.com}
+
+
+Logo:
+  logo show <img> [w]
+  logo save <img> [w]
+
+
+Other:
+  sandbox <code>
+  edit <file>
+  bridge start
+
+
+OpenNCL 3.x
+Author: ChenTom2016
