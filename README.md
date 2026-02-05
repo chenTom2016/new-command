@@ -14,7 +14,6 @@
 </p>
 
 
-## 📑 Navigation
 
 This is a multi-functional command-line application (**OpenNCL v3.0**) that I developed using **_Python_** and **_Ruby._**
     
@@ -30,6 +29,10 @@ This project uses the **LGPL** and **MIT**license.
 
 >[!Note]
 >This app is available in Linux and Windows versions; please choose the appropriate version when downloading.
+
+
+
+## 📑 Navigation
 
 
 - [✨ Features](#-features)  
