@@ -15,7 +15,7 @@
 
 
 
-This is a multi-functional command-line application (**OpenNCL v3.0**) that I developed using **_Python_** and **_Ruby._**
+This is a multi-functional command-line application (**OpenNCL**) that I developed using **_Python_** and **_Ruby._**
     
 **OpenNCL**(_Open New Command Line OS_)
     
